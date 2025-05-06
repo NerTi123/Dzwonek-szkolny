@@ -99,12 +99,12 @@ for i in range(1, len(days)):
 
 # linie poziome
 row_height = 80  # wysokosc komorki
-for i in range(1, 10):  # od kiedy linie sie zaczynaja (1 sama gora, 8 sam dół)
+for i in range(1, 10):  # od kiedy linie sie zaczynaja (1 sama gora, 10 sam dół)
     y_position = i * row_height
     canvas.create_line(70, y_position, 705, y_position, fill="black")
 
 
-# Dana godzina    (x(satałe),y)
+# Dana godzina    (x   ,y)
 canvas.create_text(80, 50, text="8:00 - 8:45", anchor="w")
 canvas.create_text(80, 130, text="8:55 - 9:35", anchor="w")
 canvas.create_text(80, 210, text="9:40 - 10:25", anchor="w")
@@ -128,11 +128,10 @@ def delete_subject(event):
         if canvas.type(item) == "text" and item not in time_labels:
             canvas.delete(item)
 
-# Add this before creating the canvas
+
 time_labels = []
 
-# Modify the time labels creation to keep track of them
-# Replace your existing time labels with this:
+# Godziny lekcji z lewej storny
 time_labels.append(canvas.create_text(80, 50, text="8:00 - 8:45", anchor="w"))
 time_labels.append(canvas.create_text(80, 130, text="8:55 - 9:35", anchor="w"))
 time_labels.append(canvas.create_text(80, 210, text="9:40 - 10:25", anchor="w"))
